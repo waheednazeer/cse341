@@ -1,17 +1,11 @@
 const routes = require('express').Router();
+const lesson1Controller= require('../controllers/lesson1') 
 
-routes.get('/', (req, res) => {
-  res.send('Sarah Birch');
-});
-routes.get('/waheed', (req, res) => {
-    res.send('Waheed Nazir');
-  });
-  routes.get('/ibrahim', (req, res) => {
-    res.send('Ibrahim Waheed');
-  });
-  routes.get('/maryam', (req, res) => {
-    res.send('Maryam Waheed');
-  });
+routes.get('/', lesson1Controller.shakiraRoute);
+
+routes.get('/waheed', lesson1Controller.waheedRoute);
+  routes.get('/ibrahim',lesson1Controller.ibrahimRoute);
+  routes.get('/maryam', lesson1Controller.maryamRoute);
 
 
 module.exports = routes;
