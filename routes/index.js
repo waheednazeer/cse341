@@ -9,6 +9,9 @@ routes.get('/waheed', (req, res) => {
   routes.get('/ibrahim', (req, res) => {
     res.send('Ibrahim Waheed');
   });
+  routes.get('/maryam', (req, res) => {
+    res.send('Maryam Waheed');
+  });
 
 
 module.exports = routes;
