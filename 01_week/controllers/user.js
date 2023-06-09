@@ -16,4 +16,12 @@ const getUsername = async (req, res, next) => {
   });
 };
 
-module.exports = { getUser, getUsername };
+const getCoursename = async (req, res, next) => {
+  const result = await mongodb.getDb().db().collection('new').find();
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0].course);
+  });
+};
+
+module.exports = { getUser, getUsername, getCoursename };
